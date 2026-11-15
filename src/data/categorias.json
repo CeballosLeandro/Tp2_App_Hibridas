@@ -1,0 +1,33 @@
+
+[
+  {
+    "id": 1,
+    "nombre": "Acción",
+    "descripcion": "Películas con combates, persecuciones y aventuras."
+  },
+  {
+    "id": 2,
+    "nombre": "Ciencia ficción",
+    "descripcion": "Historias relacionadas con tecnología, espacio y futuros alternativos."
+  },
+  {
+    "id": 3,
+    "nombre": "Aventura",
+    "descripcion": "Historias de exploración, viajes y descubrimientos."
+  },
+  {
+    "id": 4,
+    "nombre": "Drama",
+    "descripcion": "Historias centradas en conflictos y emociones humanas."
+  },
+  {
+    "id": 5,
+    "nombre": "Suspenso",
+    "descripcion": "Historias de misterio, tensión e intriga."
+  },
+  {
+    "id": 6,
+    "nombre": "Comedia",
+    "descripcion": "Producciones orientadas al humor y entretenimiento."
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nombre": "Administrador",
+    "email": "admin@vivi.com",
+    "password": "admin123",
+    "rol": "admin",
+    "favoritos": [1, 2]
+  },
+  {
+    "id": 2,
+    "nombre": "Usuario Demo",
+    "email": "usuario@vivi.com",
+    "password": "usuario123",
+    "rol": "usuario",
+    "favoritos": [3, 4]
+  }
+]

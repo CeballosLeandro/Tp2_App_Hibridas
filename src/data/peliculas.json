@@ -1,0 +1,75 @@
+
+[
+  {
+    "id": 1,
+    "titulo": "Inception",
+    "anio": 2010,
+    "tipo": "pelicula",
+    "duracion": 148,
+    "categoriaIds": [1, 2, 3],
+    "sinopsis": "Un ladrón especializado en infiltrarse en los sueños recibe la misión de implantar una idea en la mente de otra persona.",
+    "director": "Christopher Nolan",
+    "poster": null,
+    "destacado": true
+  },
+  {
+    "id": 2,
+    "titulo": "Interstellar",
+    "anio": 2014,
+    "tipo": "pelicula",
+    "duracion": 169,
+    "categoriaIds": [2, 3],
+    "sinopsis": "Un grupo de exploradores viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
+    "director": "Christopher Nolan",
+    "poster": null,
+    "destacado": true
+  },
+  {
+    "id": 3,
+    "titulo": "The Dark Knight",
+    "anio": 2008,
+    "tipo": "pelicula",
+    "duracion": 152,
+    "categoriaIds": [1, 4],
+    "sinopsis": "Batman enfrenta a un criminal que busca sumir Gotham City en el caos.",
+    "director": "Christopher Nolan",
+    "poster": null,
+    "destacado": false
+  },
+  {
+    "id": 4,
+    "titulo": "Breaking Bad",
+    "anio": 2008,
+    "tipo": "serie",
+    "duracion": 47,
+    "categoriaIds": [4, 5],
+    "sinopsis": "Un profesor de química comienza a fabricar drogas después de recibir un diagnóstico que cambia su vida.",
+    "director": "Vince Gilligan",
+    "poster": null,
+    "destacado": true
+  },
+  {
+    "id": 5,
+    "titulo": "Stranger Things",
+    "anio": 2016,
+    "tipo": "serie",
+    "duracion": 50,
+    "categoriaIds": [3, 5],
+    "sinopsis": "Un grupo de amigos descubre fenómenos sobrenaturales y secretos ocultos en su ciudad.",
+    "director": "The Duffer Brothers",
+    "poster": null,
+    "destacado": false
+  },
+  {
+    "id": 6,
+    "titulo": "The Grand Budapest Hotel",
+    "anio": 2014,
+    "tipo": "pelicula",
+    "duracion": 99,
+    "categoriaIds": [6],
+    "sinopsis": "Las aventuras de un conserje y su joven compañero en un famoso hotel europeo.",
+    "director": "Wes Anderson",
+    "poster": null,
+    "destacado": false
+  }
+]
