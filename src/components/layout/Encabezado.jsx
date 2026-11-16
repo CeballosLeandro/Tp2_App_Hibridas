@@ -93,6 +93,16 @@ function Encabezado() {
             </>
           )}
 
+          {esAdmin && (
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                isActive ? 'nav-link activo' : 'nav-link'
+              }
+            >
+              Panel Admin
+            </NavLink>
+          )}
         </nav>
       </div>
     </header>

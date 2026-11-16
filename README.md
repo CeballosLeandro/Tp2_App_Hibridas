@@ -1,17 +1,104 @@
-# React + Vite
+# Vivi Show
+## Integrantes
+- Ceballos Leandro
+- Mijael Ayala
+## Tecnologías utilizadas
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+- React
+- JavaScript
+- Vite
+- React Router
+- CSS
+- Lucide React
+- LocalStorage
+- Archivos JSON para los datos iniciales
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Usuarios
 
-## React Compiler
+- Registro de nuevos usuarios.
+- Inicio y cierre de sesión.
+- Persistencia de sesión al recargar la página.
+- Validación de campos obligatorios y control de datos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Catálogo
 
-## Expanding the Oxlint configuration
+- Visualización de películas y series.
+- Búsqueda por título y director.
+- Filtrado por tipo, categoría y año.
+- Paginación de resultados.
+- Detalle de cada contenido.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-# Tp2_App_Hibridas
+### Favoritos
+
+- Agregar y quitar contenidos de favoritos.
+- Listado de contenidos favoritos.
+- Favoritos independientes para cada usuario.
+
+### Panel administrativo
+
+- Acceso exclusivo para administradores.
+- CRUD de películas, categorias y series.
+
+## Usuarios de prueba
+
+| Rol | Email | Contraseña |
+|---|---|---|
+| Administrador | admin@vivi.com | admin123 |
+| Usuario común | usuario@vivi.com | usuario123 |
+
+## Instalación y ejecución
+
+### Requisitos
+
+- Node.js instalado.
+- npm instalado.
+
+### Pasos
+
+1. Clonar repositorio:
+
+   ```bash
+   git clone URL_DEL_REPOSITORIO
+   ```
+
+2. Ingresar a la carpeta del proyecto:
+
+   ```bash
+   cd vivi-show
+   ```
+
+3. Instalar las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+4. Iniciar el proyecto:
+
+   ```bash
+   npm run dev
+   ```
+
+## Capturas de pantalla
+
+### Inicio y catálogo
+
+![Página de inicio](public/capturas/inicio.png)
+
+### Detalle de contenido
+
+![Detalle de película o serie](public/capturas/detalle.png)
+
+### Mis favoritos
+
+![Página de favoritos](public/capturas/favoritos.png)
+
+### Inicio de sesión
+
+![Página de inicio de sesión](public/capturas/login.png)
+
+### Panel administrativo
+
+![Panel administrativo](public/capturas/admin.png)

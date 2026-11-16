@@ -9,6 +9,7 @@ import Login from '../pages/Login';
 import Registro from '../pages/Registro';
 
 import RutaProtegida from './RutaProtegida';
+import Admin from '../pages/Admin';
 
 function AppRoutes() {
   return (
@@ -28,6 +29,11 @@ function AppRoutes() {
         {/* Futuras páginas exclusivas del administrador */}
         <Route element={<RutaProtegida soloAdmin />}>
           {/* Acá incorporaremos el panel administrativo */}
+        </Route>
+
+        {/* Páginas exclusivas del administrador */}
+        <Route element={<RutaProtegida soloAdmin />}>
+            <Route path="/admin" element={<Admin />} />
         </Route>
 
         <Route

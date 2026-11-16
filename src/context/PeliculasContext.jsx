@@ -92,8 +92,8 @@ export function PeliculasProvider({ children }) {
     setPeliculas((previas) =>
       previas.map((pelicula) => ({
         ...pelicula,
-        categoriaIds: pelicula.categoriaIds.filter(
-          (categoriaId) => categoriaId !== id
+        categoriaIds: (pelicula.categoriaIds || []).filter(
+        (categoriaId) => categoriaId !== id
         )
       }))
     );
