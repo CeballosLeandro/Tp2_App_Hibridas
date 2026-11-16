@@ -1,70 +1,36 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState
-} from 'react';
+
+import { createContext, useContext } from 'react';
+import { useAuth } from './AuthContext';
 
 const FavoritosContext = createContext();
 
-const CLAVE_FAVORITOS = 'vivi-favoritos';
-
-// Recuperar favoritos del localStorage
-function obtenerFavoritosIniciales() {
-  try {
-    const datosGuardados = localStorage.getItem(CLAVE_FAVORITOS);
-
-    return datosGuardados ? JSON.parse(datosGuardados) : [];
-  } catch (error) {
-    console.error('Error al recuperar favoritos:', error);
-    return [];
-  }
-}
-
 export function FavoritosProvider({ children }) {
+  const { usuario, actualizarFavoritosUsuario } = useAuth();
 
-  const [favoritos, setFavoritos] = useState(obtenerFavoritosIniciales);
+  const favoritos = usuario?.favoritos || [];
 
-  // Guardar favoritos cada vez que cambien
-  useEffect(() => {
-    try {
-      localStorage.setItem(
-        CLAVE_FAVORITOS,
-        JSON.stringify(favoritos)
-      );
-    } catch (error) {
-      console.error('Error al guardar favoritos:', error);
-    }
-  }, [favoritos]);
-
-  // Comprobar si una película es favorita
   function esFavorito(id) {
     return favoritos.includes(Number(id));
   }
 
-  // Agregar una película
   function agregarFavorito(id) {
     const idNumerico = Number(id);
 
-    setFavoritos((previos) => {
-      if (previos.includes(idNumerico)) {
-        return previos;
-      }
+    if (!usuario || esFavorito(idNumerico)) return;
 
-      return [...previos, idNumerico];
-    });
+    actualizarFavoritosUsuario([...favoritos, idNumerico]);
   }
 
-  // Quitar una película
   function quitarFavorito(id) {
     const idNumerico = Number(id);
 
-    setFavoritos((previos) =>
-      previos.filter((favoritoId) => favoritoId !== idNumerico)
+    if (!usuario) return;
+
+    actualizarFavoritosUsuario(
+      favoritos.filter((favoritoId) => favoritoId !== idNumerico)
     );
   }
 
-  // Alternar entre agregar y quitar
   function alternarFavorito(id) {
     if (esFavorito(id)) {
       quitarFavorito(id);
@@ -88,13 +54,12 @@ export function FavoritosProvider({ children }) {
   );
 }
 
-// Hook personalizado
 export function useFavoritos() {
   const contexto = useContext(FavoritosContext);
 
   if (!contexto) {
     throw new Error(
-      'useFavoritos debe utilizarse dentro de FavoritosProvider'
+      'useFavoritos debe utilizarse dentro de FavoritosProvider.'
     );
   }
 

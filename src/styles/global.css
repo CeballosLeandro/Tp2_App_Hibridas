@@ -888,3 +888,131 @@ a {
     gap: 13px;
   }
 }
+
+
+/* AUTENTICACIÓN */
+
+.pagina-auth {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.formulario-auth {
+  width: 100%;
+  max-width: 440px;
+  padding: 35px;
+  background: rgba(36, 36, 62, 0.9);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.formulario-auth h1 {
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.formulario-auth > p {
+  color: #c4c4d4;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.formulario-auth form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario-auth label {
+  color: #e9d5ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.formulario-auth input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(192, 132, 252, 0.25);
+  border-radius: 8px;
+  background: #1b1938;
+  color: #fff;
+  outline: none;
+}
+
+.formulario-auth input:focus {
+  border-color: #c084fc;
+  box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.15);
+}
+
+.formulario-auth button {
+  margin-top: 15px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #9333ea;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.formulario-auth button:hover {
+  background: #7e22ce;
+}
+
+.formulario-auth a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+.formulario-auth a:hover {
+  text-decoration: underline;
+}
+
+.mensaje-error {
+  color: #fca5a5;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.cuentas-demo {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(15, 12, 41, 0.7);
+  color: #c4c4d4;
+  font-size: 0.85rem;
+}
+
+.cuentas-demo p {
+  margin: 4px 0;
+}
+
+.cuentas-demo strong {
+  color: #e9d5ff;
+}
+
+
+.usuario-sesion {
+  color: #e9d5ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.boton-sesion {
+  font-family: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.boton-sesion:hover {
+  color: #c084fc;
+}
