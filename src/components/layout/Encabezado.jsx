@@ -1,11 +1,18 @@
 import { NavLink, Link } from 'react-router';
-import { Clapperboard, Film, Heart } from 'lucide-react';
+
+import {
+  Clapperboard,
+  Film,
+  Heart
+} from 'lucide-react';
 
 function Encabezado() {
+
   const titulo = 'Vivi Show';
 
   return (
     <header className="encabezado">
+
       <div className="encabezado-contenido">
 
         <Link to="/" className="logo">
@@ -14,6 +21,7 @@ function Encabezado() {
         </Link>
 
         <nav className="navegacion">
+
           <NavLink
             to="/"
             end
@@ -25,13 +33,20 @@ function Encabezado() {
             Inicio
           </NavLink>
 
-          <a href="#catalogo" className="nav-link">
+          <NavLink
+            to="/favoritos"
+            className={({ isActive }) =>
+              isActive ? 'nav-link activo' : 'nav-link'
+            }
+          >
             <Heart size={18} />
-            Explorar
-          </a>
+            Mis Favoritos
+          </NavLink>
+
         </nav>
 
       </div>
+
     </header>
   );
 }
