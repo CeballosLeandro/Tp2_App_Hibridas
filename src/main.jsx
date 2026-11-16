@@ -1,15 +1,18 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router';
 
-import App from './App.jsx';
-import { PeliculasProvider } from './context/PeliculasContext.jsx';
+import App from './App';
+import { PeliculasProvider } from './context/PeliculasContext';
 
 import './styles/global.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PeliculasProvider>
-      <App />
-    </PeliculasProvider>
+    <BrowserRouter>
+      <PeliculasProvider>
+        <App />
+      </PeliculasProvider>
+    </BrowserRouter>
   </StrictMode>
 );
