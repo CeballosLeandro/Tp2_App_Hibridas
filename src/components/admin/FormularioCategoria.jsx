@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { campoObligatorio } from '../../utils/validaciones';
 
 function FormularioCategoria({
   categoriaInicial,
@@ -21,7 +22,7 @@ function FormularioCategoria({
 
     const nombreLimpio = nombre.trim();
 
-    if (!nombreLimpio) {
+    if (!campoObligatorio(nombreLimpio)) {
       setError('El nombre de la categoría es obligatorio.');
       return;
     }

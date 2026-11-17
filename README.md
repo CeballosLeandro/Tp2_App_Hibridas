@@ -85,7 +85,7 @@
 
 ### Inicio y catálogo
 
-![Página de inicio](public/capturas/inicio.png)
+![Página de inicio](public/capturas/inicio.PNG)
 
 ### Detalle de contenido
 

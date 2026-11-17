@@ -1,4 +1,9 @@
 import { useEffect, useState } from 'react';
+import {
+  campoObligatorio,
+  validarAnio,
+  numeroPositivo
+} from '../../utils/validaciones';
 
 function crearFormularioInicial(pelicula = null) {
   return {
@@ -58,24 +63,21 @@ function FormularioPelicula({
     setError('');
 
     if (
-      !formulario.titulo.trim() ||
-      !formulario.anio ||
-      !formulario.director.trim() ||
-      !formulario.sinopsis.trim()
+      !campoObligatorio(formulario.titulo) ||
+      !campoObligatorio(formulario.anio) ||
+      !campoObligatorio(formulario.director) ||
+      !campoObligatorio(formulario.sinopsis)
     ) {
       setError('Completá todos los campos obligatorios.');
       return;
     }
 
-    if (
-      Number(formulario.anio) < 1888 ||
-      Number(formulario.anio) > new Date().getFullYear() + 5
-    ) {
+    if (!validarAnio(formulario.anio)) {
       setError('Ingresá un año válido.');
       return;
     }
 
-    if (!formulario.duracion || Number(formulario.duracion) <= 0) {
+    if (!numeroPositivo(formulario.duracion)) {
       setError('Ingresá una duración o cantidad de temporadas válida.');
       return;
     }

@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Link, useNavigate, Navigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
+import {
+  campoObligatorio,
+  validarEmail
+} from '../utils/validaciones';
 
 function Login() {
   const { iniciarSesion, autenticado } = useAuth();
@@ -17,6 +21,16 @@ function Login() {
   function manejarEnvio(evento) {
     evento.preventDefault();
     setError('');
+
+    if (!campoObligatorio(email) || !campoObligatorio(password)) {
+      setError('Completá todos los campos.');
+      return;
+    }
+
+    if (!validarEmail(email)) {
+      setError('Ingresá un correo electrónico válido.');
+      return;
+    }
 
     const resultado = iniciarSesion(email, password);
 

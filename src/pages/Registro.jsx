@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate, Navigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
+import {
+  campoObligatorio,
+  validarEmail,
+  validarPassword,
+  coincidenPasswords
+} from '../utils/validaciones';
 
 function Registro() {
   const { registrarUsuario, autenticado } = useAuth();
@@ -20,12 +26,27 @@ function Registro() {
     evento.preventDefault();
     setError('');
 
-    if (password.length < 6) {
+    if (
+      !campoObligatorio(nombre) ||
+      !campoObligatorio(email) ||
+      !campoObligatorio(password) ||
+      !campoObligatorio(confirmacion)
+    ) {
+      setError('Completá todos los campos.');
+      return;
+    }
+
+    if (!validarEmail(email)) {
+      setError('Ingresá un correo electrónico válido.');
+      return;
+    }
+
+    if (!validarPassword(password)) {
       setError('La contraseña debe tener al menos 6 caracteres.');
       return;
     }
 
-    if (password !== confirmacion) {
+    if (!coincidenPasswords(password, confirmacion)) {
       setError('Las contraseñas no coinciden.');
       return;
     }
